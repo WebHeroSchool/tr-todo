@@ -3,6 +3,10 @@ import logo from './logo.svg';
 import './App.css';
 import { count, length} from "./number";
 
+const str1 = 'Hello!';
+const str2 = 'Bye!';
+const condition = true;
+
 function App() {
   return (
     <div className="App">
@@ -11,9 +15,11 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+
         <p>
           count * length ={count * length}
         </p>
+
         <a
           className="App-link"
           href="https://reactjs.org"
