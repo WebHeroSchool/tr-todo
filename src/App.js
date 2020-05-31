@@ -1,8 +1,15 @@
 import React from "react";
 
 
-const element = (<div>
+const ItemList = () => (<ul>
+  <li>1. Первое дело</li>
+  <li>2. Другое дело</li>
+</ul>)
+
+const App = () => (<div>
   <p>React element</p>
+  <ItemList/>
 </div>);
 
-export {element};
+
+export default App;
