@@ -1,7 +1,7 @@
 import React from "react";
 
-const Item = () => (
-  <p>Первое дело</p>
+const Item = ({todo}) => (
+  <li>{todo}</li>
 )
 
 export default Item;
