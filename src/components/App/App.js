@@ -4,11 +4,17 @@ import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 
 
+const todos = [
+  'Первое дело',
+  'Другое дело',
+  'Важное дело',
+]
+
 const App = () => (<div>
   <h1>Список дел</h1>
   <InputItem/>
-  <ItemList/>
-  <Footer/>
+  <ItemList todos={todos}/>
+  <Footer count={2} />
 </div>);
 
 
