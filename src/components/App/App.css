@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Roboto Slab';
+  src: url('../../fonts/RobotoSlab-Regular.woff2') format('woff2'),
+  url('../../fonts/RobotoSlab-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Literata';
+  src: url('../../fonts/Literata-Regular.woff2') format('woff2'),
+  url('../../fonts/Literata-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.wrap {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.wrap__title {
+font-family: Roboto Slab, Arial;
+}
