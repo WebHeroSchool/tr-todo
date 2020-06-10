@@ -6,3 +6,9 @@
   padding: 10px;
   font-family: Literata, Arial;
 }
+
+.done {
+  text-decoration-line: line-through;
+  text-decoration-color: #000000;
+  color: #c4c4c4;
+}

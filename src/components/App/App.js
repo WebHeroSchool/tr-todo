@@ -8,9 +8,18 @@ import styles from './App.module.css';
 const App = () => {
 
   const items = [
-    {value: 'Первое дело'},
-    {value: 'Другое дело'},
-    {value: 'Важное дело'}
+    {
+      value: 'Первое дело',
+      isDone: true,
+    },
+    {
+      value: 'Другое дело',
+      isDone: false,
+    },
+    {
+      value: 'Важное дело',
+      isDone: true,
+    }
   ];
 
   return (<div className={styles.wrap}>
