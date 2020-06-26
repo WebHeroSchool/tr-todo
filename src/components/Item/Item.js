@@ -17,6 +17,6 @@ const Item = ({item, isDone}) => (
     <IconButton aria-label='delete'>
       <DeleteIcon />
     </IconButton>
-  </li>)
+  </li>);
 
 export default Item;
