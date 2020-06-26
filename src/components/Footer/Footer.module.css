@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unfinishedDeal {
+  font-size: 21px;
+  color: #f50057;
+}
+
+.filterButton {
+  margin-bottom: 10px;
+}

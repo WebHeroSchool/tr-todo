@@ -18,9 +18,13 @@
 
 .wrap {
   margin: 0 auto;
+  padding: 1em;
   width: 500px;
+  border: 2px solid lightseagreen;
+  border-radius: 30px;
 }
 
 .title {
-font-family: Roboto Slab, Arial;
+  font-family: Roboto Slab, Arial;
+  text-align: center;
 }

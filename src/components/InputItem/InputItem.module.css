@@ -1,0 +1,9 @@
+.inputWrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inputField {
+  width: 80%;
+}
