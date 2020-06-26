@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
-import AddIcon from "@material-ui/icons/Add";
+import AddIcon from '@material-ui/icons/Add';
 import styles from './InputItem.module.css';
 
 const InputItem = () => (
@@ -17,7 +17,6 @@ const InputItem = () => (
     <Fab size="medium" color="primary" aria-label="add">
       <AddIcon />
     </Fab>
-  </div>
-);
+  </div>);
 
 export default InputItem;
