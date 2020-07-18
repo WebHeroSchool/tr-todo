@@ -29,6 +29,6 @@ class App extends React.Component {
       <Footer count={2}/>
     </div>);
   }
-};
+}
 
 export default App;
