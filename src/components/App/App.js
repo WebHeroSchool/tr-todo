@@ -6,8 +6,8 @@ import styles from './App.module.css';
 
 
 class App extends React.Component {
-  render() {
-    const items = [
+  state = {
+    items: [
       {
         value: 'Первое дело',
         isDone: true,
@@ -20,12 +20,13 @@ class App extends React.Component {
         value: 'Важное дело',
         isDone: true,
       }
-    ];
-
+    ]
+  };
+  render() {
     return (<div className={styles.wrap}>
       <h1 className={styles.title}>Список дел</h1>
       <InputItem/>
-      <ItemList items={items}/>
+      <ItemList items={this.state.items}/>
       <Footer count={2}/>
     </div>);
   }
