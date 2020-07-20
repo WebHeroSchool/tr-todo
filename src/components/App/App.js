@@ -23,7 +23,7 @@ class App extends React.Component {
     ]
   };
 
-  onClickDone = (isDone) => console.log(isDone);
+  onClickDone = isDone => console.log(isDone);
 
   render() {
     return (<div className={styles.wrap}>
