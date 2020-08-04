@@ -27,7 +27,7 @@ class App extends React.Component {
   };
 
   onClickDone = (id) => {
-    const newItemList = this.state.items.map(item => {
+    const newItemList = this.state.items.map((item) => {
       const newItem = { ...item };
 
       if ( newItem.id === id) {
@@ -35,7 +35,7 @@ class App extends React.Component {
       }
 
       return newItem;
-    })
+    });
 
     this.setState({items: newItemList});
   };
