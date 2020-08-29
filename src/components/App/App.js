@@ -27,7 +27,7 @@ class App extends React.Component {
     count: 3
   };
 
-  onClickAdd = (value) => this.setState(state => ({
+  onClickAdd = (value) => this.setState((state) => ({
     items: [
       ...state.items,
       {

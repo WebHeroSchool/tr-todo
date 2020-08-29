@@ -42,7 +42,7 @@ class InputItem extends React.Component {
           helperText={this.state.helperText}
           multiline
           value={this.state.inputValue}
-          onChange={event => this.setState({
+          onChange={(event) => this.setState({
             inputValue: event.target.value.toUpperCase(),
             helperText: '',
             error: false
