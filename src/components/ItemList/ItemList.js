@@ -8,7 +8,7 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (
       item={item}
       isDone={item.isDone}
       id={item.id}
-      key={item.value}
+      key={item.id}
       onClickDone={onClickDone}
       onClickDelete={onClickDelete}
       />)

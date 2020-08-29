@@ -23,8 +23,21 @@ class App extends React.Component {
         value: 'Важное дело',
         isDone: false,
       }
-    ]
+    ],
+    count: 3
   };
+
+  onClickAdd = (value) => this.setState(state => ({
+    items: [
+      ...state.items,
+      {
+        value,
+        isDone: false,
+        id: state.count + 1
+      },
+    ],
+    count: state.count + 1
+  }));
 
   onClickDone = (id) => {
     const newItemList = this.state.items.map((item) => {
@@ -45,21 +58,28 @@ class App extends React.Component {
       return elem.id === id;
     });
     const newItemList = this.state.items;
+    let newCount = this.state.count;
     newItemList.splice(index, 1);
-    this.setState({items: newItemList});
+    newCount--;
+    this.setState({
+      items: newItemList,
+      count: newCount
+    });
 
   };
 
   render() {
     return (<div className={styles.wrap}>
       <h1 className={styles.title}>Список дел</h1>
-      <InputItem/>
+      <InputItem onClickAdd={this.onClickAdd}/>
       <ItemList
         items={this.state.items}
         onClickDone={this.onClickDone}
         onClickDelete={this.onClickDelete}
       />
-      <Footer count={2}/>
+      <Footer
+        count={this.state.count}
+      />
     </div>);
   }
 }
