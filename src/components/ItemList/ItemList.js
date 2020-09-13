@@ -21,6 +21,6 @@ ItemList.defaultProps = {
     value: 'Нет дел',
     isDone: false,
   }]
-}
+};
 
 export default ItemList;
