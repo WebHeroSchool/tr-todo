@@ -1,8 +1,8 @@
-import React from "react";
-import InputItem from "../InputItem/InputItem";
-import ItemList from "../ItemList/ItemList";
-import Footer from "../Footer/Footer";
-import styles from "./App.module.css";
+import React from 'react';
+import InputItem from '../InputItem/InputItem';
+import ItemList from '../ItemList/ItemList';
+import Footer from '../Footer/Footer';
+import styles from './App.module.css';
 
 class App extends React.Component {
   state = {

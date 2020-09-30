@@ -28,16 +28,15 @@ class InputItem extends React.Component {
   }
 
   render() {
-    // const {onClickAdd} = this.props;
 
     return (
       <form className={styles.inputWrap}>
         <TextField
           className={styles.inputField}
-          label="Введите новое дело"
-          id="outlined-margin-none"
-          defaultValue=""
-          variant="outlined"
+          label='Введите новое дело'
+          id='outlined-margin-none'
+          defaultValue''
+          variant='outlined'
           error={this.state.error}
           helperText={this.state.helperText}
           multiline
@@ -49,9 +48,9 @@ class InputItem extends React.Component {
           })}
         />
         <Fab
-          size="medium"
-          color="primary"
-          aria-label="add"
+          size='medium'
+          color='primary'
+          aria-label='add'
           onClick={this.onAddClick}
         >
           <AddIcon />

@@ -1,9 +1,9 @@
-import React from "react";
-import Checkbox from "@material-ui/core/Checkbox";
-import IconButton from "@material-ui/core/IconButton";
-import DeleteIcon from "@material-ui/icons/Delete";
-import classnames from "classnames";
-import styles from "./Item.module.css";
+import React from 'react';
+import Checkbox from '@material-ui/core/Checkbox';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import classnames from 'classnames';
+import styles from './Item.module.css';
 
 const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => (
   <li
@@ -13,17 +13,17 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => (
     })}
   >
     <span className={styles.itemText} onClick={() => onClickDone(id)}>
-      <Checkbox color="primary" checked={isDone} />
+      <Checkbox color='primary' checked={isDone} />
       {value}
     </span>
-    <IconButton aria-label="delete" onClick={() => onClickDelete(id)}>
+    <IconButton aria-label='delete' onClick={() => onClickDelete(id)}>
       <DeleteIcon />
     </IconButton>
   </li>
 );
 
 Item.defaultProps = {
-    value: "Нет дел",
+    value: 'Нет дел',
 };
 
 export default Item;
