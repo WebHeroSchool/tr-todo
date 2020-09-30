@@ -1,9 +1,8 @@
-import React from 'react';
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
-import styles from './App.module.css';
-
+import React from "react";
+import InputItem from "../InputItem/InputItem";
+import ItemList from "../ItemList/ItemList";
+import Footer from "../Footer/Footer";
+import styles from "./App.module.css";
 
 class App extends React.Component {
   state = {
@@ -22,35 +21,36 @@ class App extends React.Component {
         id: 3,
         value: 'Важное дело',
         isDone: false,
-      }
+      },
     ],
-    count: 3
+     count: 3
   };
 
-  onClickAdd = (value) => this.setState((state) => ({
-    items: [
-      ...state.items,
-      {
-        value,
-        isDone: false,
-        id: state.count + 1
-      }
-    ],
-    count: state.count + 1
-  }));
+  onClickAdd = (value) =>
+    this.setState((state) => ({
+      items: [
+        ...state.items,
+        {
+          value,
+          isDone: false,
+          id: state.count + 1,
+        },
+      ],
+      count: state.count + 1,
+    }));
 
   onClickDone = (id) => {
     const newItemList = this.state.items.map((item) => {
       const newItem = { ...item };
 
-      if ( newItem.id === id) {
+      if (newItem.id === id) {
         newItem.isDone = !newItem.isDone;
       }
 
       return newItem;
     });
 
-    this.setState({items: newItemList});
+    this.setState({ items: newItemList });
   };
 
   onClickDelete = (id) => {
@@ -63,24 +63,23 @@ class App extends React.Component {
     newCount--;
     this.setState({
       items: newItemList,
-      count: newCount
+      count: newCount,
     });
-
   };
 
   render() {
-    return (<div className={styles.wrap}>
-      <h1 className={styles.title}>Список дел</h1>
-      <InputItem onClickAdd={this.onClickAdd}/>
-      <ItemList
-        items={this.state.items}
-        onClickDone={this.onClickDone}
-        onClickDelete={this.onClickDelete}
-      />
-      <Footer
-        count={this.state.count}
-      />
-    </div>);
+    return (
+      <div className={styles.wrap}>
+        <h1 className={styles.title}>Список дел</h1>
+        <InputItem onClickAdd={this.onClickAdd} />
+        <ItemList
+          items={this.state.items}
+          onClickDone={this.onClickDone}
+          onClickDelete={this.onClickDelete}
+        />
+        <Footer count={this.state.count} />
+      </div>
+    );
   }
 }
 
