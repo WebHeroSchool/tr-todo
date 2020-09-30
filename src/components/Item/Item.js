@@ -23,7 +23,8 @@ const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => (
 );
 
 Item.defaultProps = {
-    value: 'Нет дел',
+  value: 'Нет дел',
+  isDone: false,
 };
 
 export default Item;
