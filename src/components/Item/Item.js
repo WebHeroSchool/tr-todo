@@ -31,6 +31,6 @@ Item.defaultProps = {
 Item.propTypes = {
   value: PropTypes.string.isRequired,
   isDone: PropTypes.bool.isRequired
-}
+};
 
 export default Item;
