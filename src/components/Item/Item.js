@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -26,5 +27,10 @@ Item.defaultProps = {
   value: 'Нет дел',
   isDone: false,
 };
+
+Item.propTypes = {
+  value: PropTypes.string.isRequired,
+  isDone: PropTypes.bool.isRequired
+}
 
 export default Item;
