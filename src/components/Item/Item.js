@@ -42,23 +42,6 @@ class Item extends React.Component {
   }
 }
 
-// const Item = ({ value, isDone, id, onClickDone, onClickDelete }) => (
-//   <li
-//     className={classnames({
-//       [styles.item]: true,
-//       [styles.done]: isDone,
-//     })}
-//   >
-//     <span className={styles.itemText} onClick={() => onClickDone(id)}>
-//       <Checkbox color='primary' checked={isDone} />
-//       {value}
-//     </span>
-//     <IconButton aria-label='delete' onClick={() => onClickDelete(id)}>
-//       <DeleteIcon />
-//     </IconButton>
-//   </li>
-// );
-
 Item.defaultProps = {
   value: 'Нет дел',
   isDone: false,
