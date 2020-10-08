@@ -13,7 +13,6 @@ const Footer = ({ count }) => (<footer className={styles.footer}>
     <Button>выполненные</Button>
   </ButtonGroup>
   <Button
-    className={styles.allDelButton}
     variant="contained"
     color="secondary"
     startIcon={<DeleteIcon />}

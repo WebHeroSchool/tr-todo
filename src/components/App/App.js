@@ -24,22 +24,26 @@ class App extends React.Component {
         isDone: false,
       },
     ],
-     count: 3
+    count: 3,
+    numTask: 3,
   };
 
-  onClickAdd = (value, isDone) =>
+  onClickAdd = (value, isDone) => {
+    
     this.setState((state) => ({
       items: [
         ...state.items,
         {
           value,
           isDone,
-          id: state.count + 1,
+          id: state.numTask + 1,
         },
       ],
       count: state.count + 1,
+      numTask: state.numTask + 1,
     }));
-
+  };
+  
   onClickDone = (id) => {
     const newItemList = this.state.items.map((item) => {
       const newItem = { ...item };
