@@ -35,7 +35,6 @@ class InputItem extends React.Component {
           className={styles.inputField}
           label='Введите новое дело'
           id='outlined-margin-none'
-          defaultValue=''
           variant='outlined'
           error={this.state.error}
           helperText={this.state.helperText}
