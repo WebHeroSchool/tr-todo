@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import InputItem from '../InputItem/InputItem';
 import ItemList from '../ItemList/ItemList';
 import Footer from '../Footer/Footer';
 import styles from './App.module.css';
 
-class App extends React.Component {
-  state = {
+const App = () => {
+  const appState = {
     items: [
       {
         id: 1,
@@ -16,7 +16,7 @@ class App extends React.Component {
         id: 2,
         value: 'Другое дело',
         isDone: false,
-        
+      
       },
       {
         id: 3,
@@ -27,65 +27,76 @@ class App extends React.Component {
     count: 3,
     numTask: 3,
   };
-
-  onClickAdd = (value, isDone) => {
+  
+  const [items, setItems] =useState(appState.items);
+  const [count, setCount] = useState(appState.count);
+  const [numTask, setNumTask] = useState(appState.numTask);
+  
+  useEffect(() => {
+    console.log('Монтирование компанента');
+  }, []);
+  
+  useEffect(() => {
+    console.log('Изменение компанента');
+  });
+  
+  const onClickAdd = (value, isDone) => {
     
-    this.setState((state) => ({
-      items: [
-        ...state.items,
-        {
-          value,
-          isDone,
-          id: state.numTask + 1,
-        },
-      ],
-      count: state.count + 1,
-      numTask: state.numTask + 1,
-    }));
+    const newTask = [
+      ...items,
+      {
+        value,
+        isDone,
+        id: numTask + 1,
+      },
+    ];
+    
+    setItems(newTask);
+    setCount(count + 1);
+    setNumTask(numTask + 1);
   };
   
-  onClickDone = (id) => {
-    const newItemList = this.state.items.map((item) => {
+  const onClickDone = (id) => {
+    const newItemList = items.map((item) => {
       const newItem = { ...item };
-
+      
       if (newItem.id === id) {
         newItem.isDone = !newItem.isDone;
       }
-
+      
       return newItem;
     });
-
-    this.setState({ items: newItemList });
+  
+    setItems(newItemList);
   };
-
-  onClickDelete = (id) => {
-    const index = this.state.items.findIndex((elem) => {
+  
+  const onClickDelete = (id) => {
+    const index = items.findIndex((elem) => {
       return elem.id === id;
     });
-    const newItemList = this.state.items;
-    let newCount = this.state.count;
+    
+    const newItemList = items;
+    let newCount = count;
+    
     newItemList.splice(index, 1);
     newCount--;
-    this.setState({
-      items: newItemList,
-      count: newCount,
-    });
+  
+    setItems(newItemList);
+    setCount(newCount);
   };
-
-  render() {
-    return (
-      <div className={styles.wrap}>
-        <h1 className={styles.title}>Список дел</h1>
-        <InputItem onClickAdd={this.onClickAdd} />
-        <ItemList
-          items={this.state.items}
-          onClickDone={this.onClickDone}
-          onClickDelete={this.onClickDelete}
-        />
-        <Footer count={this.state.count} />
-      </div>
-    );
-  }
+  
+  return (
+    <div className={styles.wrap}>
+      <h1 className={styles.title}>Список дел</h1>
+      <InputItem onClickAdd={onClickAdd} />
+      <ItemList
+        items={items}
+        onClickDone={onClickDone}
+        onClickDelete={onClickDelete}
+      />
+      <Footer count={count} />
+    </div>
+  );
 }
 
 export default App;
