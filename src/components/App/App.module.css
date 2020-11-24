@@ -16,23 +16,36 @@
   font-display: swap;
 }
 
+body {
+  font-family: Roboto Slab, Arial;
+}
+
 .wrap {
   display: flex;
   justify-content: center;
   margin: 0 auto;
   padding: .5em;
-  max-width: 480px;
+  max-width: 500px;
 }
 
 .menu {
   padding: .5em;
+  
 }
 
 .content {
+  display: flex;
+  justify-content: center;
+  min-width: 188px;
   margin-left: .5em;
 }
 
+.link {
+  text-decoration: none;
+  color: black;
+}
+
 .title {
-  font-family: Roboto Slab, Arial;
+  /*font-family: Roboto Slab, Arial;*/
   text-align: center;
 }
