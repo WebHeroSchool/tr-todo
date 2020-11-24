@@ -17,6 +17,12 @@
 }
 
 .itemText {
-  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   padding: 0 5px;
+}
+
+.itemValue {
+white-space: pre-wrap;
 }
