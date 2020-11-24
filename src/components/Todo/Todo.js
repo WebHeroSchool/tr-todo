@@ -36,13 +36,13 @@ const Todo = () => {
 	const [count, setCount] = useState(appState.count);
 	const [numTask, setNumTask] = useState(appState.numTask);
 	
-	useEffect(() => {
-		console.log('Монтирование компанента');
-	}, []);
-	
-	useEffect(() => {
-		console.log('Изменение компанента');
-	});
+	// useEffect(() => {
+	// 	console.log('Монтирование компанента');
+	// }, []);
+	//
+	// useEffect(() => {
+	// 	console.log('Изменение компанента');
+	// });
 	
 	const onClickAdd = (value, isDone) => {
 		

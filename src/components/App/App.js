@@ -1,4 +1,5 @@
 import React from 'react';
+// noinspection ES6CheckImport
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import styles from './App.module.css';
