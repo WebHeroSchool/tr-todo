@@ -1,102 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import InputItem from '../InputItem/InputItem';
-import ItemList from '../ItemList/ItemList';
-import Footer from '../Footer/Footer';
+import React from 'react';
+// noinspection ES6CheckImport
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 import styles from './App.module.css';
 
-const App = () => {
-  const appState = {
-    items: [
-      {
-        id: 1,
-        value: 'Первое дело',
-        isDone: false,
-      },
-      {
-        id: 2,
-        value: 'Другое дело',
-        isDone: false,
-      
-      },
-      {
-        id: 3,
-        value: 'Важное дело',
-        isDone: false,
-      },
-    ],
-    count: 3,
-    numTask: 3,
-  };
-  
-  const [items, setItems] =useState(appState.items);
-  const [count, setCount] = useState(appState.count);
-  const [numTask, setNumTask] = useState(appState.numTask);
-  
-  useEffect(() => {
-    console.log('Монтирование компанента');
-  }, []);
-  
-  useEffect(() => {
-    console.log('Изменение компанента');
-  });
-  
-  const onClickAdd = (value, isDone) => {
-    
-    const newTask = [
-      ...items,
-      {
-        value,
-        isDone,
-        id: numTask + 1,
-      },
-    ];
-    
-    setItems(newTask);
-    setCount(count + 1);
-    setNumTask(numTask + 1);
-  };
-  
-  const onClickDone = (id) => {
-    const newItemList = items.map((item) => {
-      const newItem = { ...item };
-      
-      if (newItem.id === id) {
-        newItem.isDone = !newItem.isDone;
-      }
-      
-      return newItem;
-    });
-  
-    setItems(newItemList);
-  };
-  
-  const onClickDelete = (id) => {
-    const index = items.findIndex((elem) => {
-      return elem.id === id;
-    });
-    
-    const newItemList = items;
-    let newCount = count;
-    
-    newItemList.splice(index, 1);
-    newCount--;
-  
-    setItems(newItemList);
-    setCount(newCount);
-  };
-  
-  return (
+import Card from '@material-ui/core/Card';
+import MenuItem from '@material-ui/core/MenuItem';
+import MenuList from '@material-ui/core/MenuList';
+
+import Todo from '../Todo/Todo';
+import About from '../About/About';
+import Contacts from '../Contacts/Contact';
+
+const App = () =>
+  (<Router>
     <div className={styles.wrap}>
-      <h1 className={styles.title}>Список дел</h1>
-      <InputItem onClickAdd={onClickAdd} />
-      <ItemList
-        items={items}
-        onClickDone={onClickDone}
-        onClickDelete={onClickDelete}
-      />
-      <Footer count={count} />
+      <Card className={styles.menu}>
+        <MenuList>
+          <Link to='/' className={styles.link}><MenuItem>Обо мне</MenuItem></Link>
+          <Link to='/Todo' className={styles.link}><MenuItem>Дела</MenuItem></Link>
+          <Link to='/Contacts' className={styles.link}><MenuItem>Контакты</MenuItem></Link>
+        </MenuList>
+      </Card>
+
+      <Card className={styles.content}>
+        <Route path='/' exact component={About} />
+        <Route path='/Todo' component={Todo} />
+        <Route path='/Contacts' component={Contacts} />
+      </Card>
     </div>
-  );
-}
+  </Router>);
 
 export default App;

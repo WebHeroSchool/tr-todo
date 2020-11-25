@@ -13,10 +13,10 @@ const Item = ({value, isDone, id, onClickDone, onClickDelete}) => (
       [styles.done]: isDone,
     })}
   >
-    <span className={styles.itemText} onClick={() => onClickDone(id)}>
+    <div className={styles.itemText} onClick={() => onClickDone(id)}>
       <Checkbox color='primary' checked={isDone}/>
-      {value}
-    </span>
+      <span className={styles.itemValue}>{value}</span>
+    </div>
     <IconButton aria-label='delete' onClick={() => onClickDelete(id)}>
       <DeleteIcon/>
     </IconButton>

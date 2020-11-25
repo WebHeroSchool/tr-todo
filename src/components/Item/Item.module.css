@@ -7,7 +7,7 @@
   background: #e9e9e9;
   margin-bottom: 5px;
   padding: 0 10px;
-  font-family: Literata, Arial;
+  font-family: Literata, Arial, sans-serif;
 }
 
 .done {
@@ -17,6 +17,12 @@
 }
 
 .itemText {
-  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   padding: 0 5px;
+}
+
+.itemValue {
+  white-space: pre-wrap;
 }

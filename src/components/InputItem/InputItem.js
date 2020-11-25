@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
@@ -47,6 +47,7 @@ const InputItem = ({onClickAdd}) => {
         }
       />
       <Fab
+        // className={styles.}
         size='medium'
         color='primary'
         aria-label='add'
