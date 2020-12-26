@@ -12,15 +12,29 @@ class About extends React.Component {
 	
 	componentDidMount() {
 		octokit.repos.listForUser({
-			username: 'stasokulov',
-		}).then(({data}) => console.log(data));
+			username: 'MadMike80',
+		}).then(({data}) => {
+			this.setState({
+				isLoading: false,
+				repoList: data,
+			})
+			console.log(data)
+		});
 	}
 	
 	render() {
-		const {isLoading} = this.state;
+		const { isLoading, repoList } = this.state;
 		
 		return (
-			<h1>{isLoading ? <CircularProgress color="secondary" /> : 'Обо мне'}</h1>
+			<div>
+				<h1>{isLoading ? <CircularProgress color="secondary" /> : 'Обо мне'}</h1>
+				<ul>
+					{ repoList.map( repo => (
+						<li key={repo.id}>
+							<a href={repo.html_url}>{repo.name}</a>
+						</li>))}
+				</ul>
+			</div>
 		)
 	}
 }
