@@ -8,9 +8,11 @@ class About extends React.Component {
 	state = {
 		isLoading: true,
 		repoList: [],
+		userInfo: [],
 	}
 	
 	componentDidMount() {
+
 		octokit.repos.listForUser({
 			username: 'MadMike80',
 		}).then(({data}) => {
@@ -18,8 +20,19 @@ class About extends React.Component {
 				isLoading: false,
 				repoList: data,
 			})
-			console.log(data)
+			// console.log(data);
 		});
+
+		octokit.users.getByUsername({
+			username: 'MadMike80',
+		}).then(({data}) => {
+			this.setState({
+				isLoading: false,
+				userInfo: data,
+			})
+			console.log(data);
+		});
+
 	}
 	
 	render() {
