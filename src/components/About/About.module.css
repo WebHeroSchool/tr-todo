@@ -10,10 +10,6 @@
   align-items: center;
 }
 
-.loader {
-  /*margin: 0 auto;*/
-}
-
 .img__wrap {
   display: flex;
   justify-content: space-around;
@@ -29,7 +25,7 @@
 }
 
 .text {
-font-weight: bold;
+  font-weight: bold;
 }
 
 .link {
@@ -38,6 +34,5 @@ font-weight: bold;
 }
 
 .link:hover {
-  /*background-color: black;*/
   color: green;
 }

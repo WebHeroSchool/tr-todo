@@ -26,7 +26,7 @@ class About extends React.Component {
 			this.setState({
 				isLoading: false,
 				repoList: data,
-			})
+			});
 		}).catch(() => {
 			this.setState({
 				incorrectRequest: true,
@@ -68,7 +68,7 @@ class About extends React.Component {
 					<p> {userInfo.bio}</p>
 					<p>My repositories:</p>
 					<ol className={styles.list}>
-						{ repoList.map( repo => (
+						{ repoList.map( (repo) => (
 							<li className={styles.item} key={repo.id}>
 								<a className={styles.link} href={repo.html_url}>{repo.name}</a>
 							</li>))}
@@ -76,7 +76,7 @@ class About extends React.Component {
 				}
 				{incorrectRequest && <div>Ошибка запроса!</div>}
 			</div>
-		)
+		);
 	}
 }
 
