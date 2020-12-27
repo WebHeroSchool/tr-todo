@@ -1,0 +1,43 @@
+.wrap {
+  min-width: 320px;
+  padding: 2px 8px;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  /*margin: 0 auto;*/
+}
+
+.img__wrap {
+  display: flex;
+  justify-content: space-around;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+}
+
+.login {
+  text-align: center;
+}
+
+.text {
+font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  /*background-color: black;*/
+  color: green;
+}
