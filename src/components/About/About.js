@@ -30,7 +30,7 @@ class About extends React.Component {
 		}).catch(() => {
 			this.setState({
 				incorrectRequest: true,
-			})
+			});
 		});
 
 		octokit.users.getByUsername({
@@ -39,11 +39,11 @@ class About extends React.Component {
 			this.setState({
 				isLoading: false,
 				userInfo: data,
-			})
+			});
 		}).catch(() => {
 			this.setState({
 				incorrectRequest: true,
-			})
+			});
 		});
 
 	}
